@@ -1,0 +1,17 @@
+.highlight {
+  background-color: hsl(137, 100%, 25%);
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+p {
+  &.custom {
+    text-align: start;
+  }
+
+  &:has(.highlight) {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+}

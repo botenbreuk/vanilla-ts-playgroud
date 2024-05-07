@@ -1,0 +1,26 @@
+{
+  "name": "vanilla-ts-playgroud",
+  "private": true,
+  "version": "0.0.0",
+  "devDependencies": {
+    "@types/node": "20.12.10",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "7.8.0",
+    "eslint": "8.57.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-organize-imports": "3.2.4",
+    "sass": "1.77.0",
+    "terser": "5.31.0",
+    "typescript": "5.4.5",
+    "vite": "5.2.11",
+    "vite-plugin-checker": "0.6.4"
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext js,ts --max-warnings=0",
+    "prettier": "prettier --write ./src",
+    "preview": "vite preview",
+    "start": "vite",
+    "ts": "tsc --version && tsc"
+  }
+}
