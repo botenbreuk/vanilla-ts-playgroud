@@ -1,7 +1,7 @@
 import { setupCounter } from './counter/counter';
-import { example } from './hightlight/hightlight';
 import './styles/main.scss';
 import typescriptLogo from './styles/typescript.svg';
+import { zodMultipleRefine } from './zod/zod-field';
 import viteLogo from '/vite.svg';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -24,4 +24,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
 
-example();
+// example();
+// zodFieldExample();
+zodMultipleRefine();

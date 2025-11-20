@@ -1,10 +1,6 @@
-import dns from 'dns';
 import * as path from 'path';
 import { defineConfig } from 'vite';
-import checker from 'vite-plugin-checker';
-
-// Used to change 127.0.0.1 to localhost for node version prior to 17
-dns.setDefaultResultOrder('verbatim');
+import { checker } from 'vite-plugin-checker';
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
@@ -13,7 +9,7 @@ export default defineConfig(() => ({
       typescript: true,
       eslint: {
         useFlatConfig: true,
-        lintCommand: 'eslint src --ext js,ts --max-warnings=0"'
+        lintCommand: 'eslint src --max-warnings 0"'
       },
       enableBuild: false
     })
@@ -23,7 +19,10 @@ export default defineConfig(() => ({
     emptyOutDir: true,
     outDir: './build',
     minify: 'terser',
-    terserOptions: { output: { comments: false } },
+    terserOptions: {
+      format: { comments: false },
+      compress: { pure_funcs: ['console.log', 'console.info'] }
+    },
     rollupOptions: {
       output: {
         assetFileNames: assetInfo => {

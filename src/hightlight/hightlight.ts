@@ -43,13 +43,13 @@ export function example() {
     'VELD TWEE Test een'
   ];
 
-  const before_arr = before.split(' ');
+  const beforeArr = before.split(' ');
 
   // Log to console
   test.forEach(v => {
     const p = document.createElement('p');
     p.className = 'custom';
-    p.innerHTML = highlight(before_arr, v.split(' '));
+    p.innerHTML = highlight(beforeArr, v.split(' '));
     document.querySelector<HTMLDivElement>('#app')!.append(p);
   });
 }
