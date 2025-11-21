@@ -27,3 +27,10 @@ setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
 // example();
 // zodFieldExample();
 zodMultipleRefine();
+
+// sendEmail({
+//   from: '',
+//   to: '',
+//   subject: 'User Information',
+//   html: emailTemplate
+// });

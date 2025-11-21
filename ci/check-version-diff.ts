@@ -19,20 +19,6 @@ function latestVersionApi(packageName: string) {
     .then(res => res.data.version);
 }
 
-// Via NPM command
-function latestVersionCmd(packageName: string): Promise<string> {
-  return new Promise((resolve, reject) =>
-    exec(`npm view ${packageName} version --json`, (error, stdout, stderr) => {
-      if (error) {
-        reject(new Error(stderr));
-        return;
-      }
-
-      resolve(JSON.parse(stdout));
-    })
-  );
-}
-
 function check(
   packageName: string,
   version: string
@@ -88,8 +74,12 @@ const sortedKeys = Object.keys(packageJson.dependencies).toSorted();
   );
 
   // Write to file
-  fs.writeFile(`${__dirname}/${fileName}`, JSON.stringify(filtered, null, 2), err => {
-    if (err) throw err;
-    console.log(`\nData written to: ${__dirname}/${fileName}`);
-  });
+  fs.writeFile(
+    `${__dirname}/${fileName}`,
+    JSON.stringify(filtered, null, 2),
+    err => {
+      if (err) throw err;
+      console.log(`\nData written to: ${__dirname}/${fileName}`);
+    }
+  );
 })();
