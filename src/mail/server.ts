@@ -61,6 +61,7 @@ app.post('/api/send-email', async (req: Request, res: Response) => {
       text,
       html
     });
+    console.log(`[${new Date()}]`, 'Mail sent');
   } catch (error) {
     console.error('Email sending error:', error);
     res.status(500).json({

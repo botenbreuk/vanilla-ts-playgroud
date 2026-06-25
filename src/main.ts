@@ -1,4 +1,6 @@
 import { setupCounter } from './counter/counter';
+import emailTemplate from './mail/email-template2.html?raw';
+import { sendEmail } from './mail/mailer';
 import './styles/main.scss';
 import typescriptLogo from './styles/typescript.svg';
 import { zodMultipleRefine } from './zod/zod-field';
@@ -28,9 +30,9 @@ setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
 // zodFieldExample();
 zodMultipleRefine();
 
-// sendEmail({
-//   from: '',
-//   to: '',
-//   subject: 'User Information',
-//   html: emailTemplate
-// });
+sendEmail({
+  from: 'test@random-bestaat-niet.nl',
+  to: 'habo-robin@live.nl',
+  subject: 'User Information',
+  html: emailTemplate
+});
